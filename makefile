@@ -1,11 +1,12 @@
-CC = aarch64-none-elf-gcc
+
+	 CC = aarch64-none-elf-gcc
 LD = aarch64-none-elf-ld
 OBJCOPY = aarch64-none-elf-objcopy
 
 CFLAGS = -Wall -O2 -ffreestanding -nostdlib -nostinc -fno-builtin
 LDFLAGS = -T linker.ld --nostdlib
 
-SRCS = entry.s uart.c main.c
+SRCS = entry.s uart.c patcher.c main.c
 OBJS = $(SRCS:.c=.o)
 OBJS := $(OBJS:.s=.o)
 
